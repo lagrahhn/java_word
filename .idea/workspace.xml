@@ -4,16 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f1dbfe3e-3eae-43d7-b8f5-5b42705e37cd" name="变更" comment="first commit">
-      <change afterPath="$PROJECT_DIR$/doc/chapter1.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doc/img.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doc/img_1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doc/img_2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doc/img_3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doc/img_4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/lagrahhn/TfIdf.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="f1dbfe3e-3eae-43d7-b8f5-5b42705e37cd" name="变更" comment="添加了文档，更新了tfidf方法" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -100,7 +91,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1701352414258</updated>
-      <workItem from="1701352415364" duration="2988000" />
+      <workItem from="1701352415364" duration="3170000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1701352457289</created>
@@ -109,13 +100,32 @@
       <option name="project" value="LOCAL" />
       <updated>1701352457289</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="first commit">
+      <created>1701355494960</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1701355494960</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
+    <MESSAGE value="添加了文档，更新了tfidf方法" />
     <MESSAGE value="first commit" />
     <option name="LAST_COMMIT_MESSAGE" value="first commit" />
   </component>
