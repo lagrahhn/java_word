@@ -5,6 +5,11 @@ import java.util.List;
 import java.util.Map;
 
 public class TfIdf {
+    /**
+     * @param doc  文档词语
+     * @param term 文本
+     * @return 文本在文档中出现的次数/文档词语数量
+     */
     public double tf(List<String> doc, String term) {
         double termFrequency = 0;
         for (String str : doc) {
@@ -15,6 +20,13 @@ public class TfIdf {
         return termFrequency / doc.size();
     }
 
+    /**
+     * 统计某个文本在所有文档中出现的次数
+     *
+     * @param docs 多个文档
+     * @param term 查找文本
+     * @return 某个文本在所有文档中出现的次数
+     */
     public int df(List<List<String>> docs, String term) {
         int n = 0;
         if (term != null && term != "") {
@@ -32,10 +44,21 @@ public class TfIdf {
         return n;
     }
 
+    /**
+     * @param docs 文档数量
+     * @param term 文本
+     * @return idf计算值
+     */
     public double idf(List<List<String>> docs, String term) {
         return Math.log(docs.size() / (double) df(docs, term) + 1);
     }
 
+    /**
+     * @param doc  指定文档
+     * @param docs 所有文档
+     * @param term 目标单词
+     * @return td*idf
+     */
     public double tfidf(List<String> doc, List<List<String>> docs, String term) {
         return tf(doc, term) * idf(docs, term);
     }
