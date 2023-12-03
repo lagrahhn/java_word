@@ -4,20 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f1dbfe3e-3eae-43d7-b8f5-5b42705e37cd" name="变更" comment="添加lucene分词">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/lagrahhn/Indexer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/lagrahhn/Searcher.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/data/a.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/data/b.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/data/c.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/index/_0.cfe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/index/_0.cfs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/index/_0.si" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/index/_1.cfe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/index/_1.cfs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/index/_1.si" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/index/segments_2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/index/write.lock" afterDir="false" />
+    <list default="true" id="f1dbfe3e-3eae-43d7-b8f5-5b42705e37cd" name="变更" comment="添加索引和搜索功能">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/lagrahhn/CNIndexer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/lagrahhn/CNSearcher.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
@@ -25,6 +14,9 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -54,22 +46,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;F:/项目/Java项目/words/src/main/resources&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "F:/项目/Java项目/words/src/main/resources",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "settings.editor.selected.configurable": "editor.preferences.import",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="F:\项目\Java项目\words\src\main\resources" />
@@ -79,7 +71,7 @@
       <recent name="F:\项目\Java项目\words\src\main\resources" />
     </key>
   </component>
-  <component name="RunManager" selected="应用程序.Searcher">
+  <component name="RunManager" selected="应用程序.CNSearcher">
     <configuration default="true" type="AZURE_FUNCTION_SUPPORT" factoryName="Run Functions">
       <option name="appName" />
       <option name="appServicePlanName" />
@@ -108,6 +100,32 @@
       <option name="resourceGroup" />
       <option name="stagingFolder" />
       <option name="subscription" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CNIndexer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.lagrahhn.CNIndexer" />
+      <module name="lagrahhn" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.lagrahhn.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CNSearcher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.lagrahhn.CNSearcher" />
+      <module name="lagrahhn" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.lagrahhn.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -151,39 +169,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="StdAnalyzer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.lagrahhn.StdAnalyzer" />
-      <module name="lagrahhn" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.lagrahhn.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="VSM" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.lagrahhn.VSM" />
-      <module name="lagrahhn" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.lagrahhn.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="应用程序.CNSearcher" />
+        <item itemvalue="应用程序.CNIndexer" />
         <item itemvalue="应用程序.Searcher" />
         <item itemvalue="应用程序.Indexer" />
         <item itemvalue="应用程序.HaNLP" />
-        <item itemvalue="应用程序.StdAnalyzer" />
-        <item itemvalue="应用程序.VSM" />
       </list>
     </recent_temporary>
   </component>
@@ -202,7 +194,7 @@
       <workItem from="1701417971616" duration="74000" />
       <workItem from="1701439523397" duration="2180000" />
       <workItem from="1701523075229" duration="10000" />
-      <workItem from="1701586731442" duration="2596000" />
+      <workItem from="1701586731442" duration="3303000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1701352457289</created>
@@ -253,7 +245,14 @@
       <option name="project" value="LOCAL" />
       <updated>1701413447707</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="添加索引和搜索功能">
+      <created>1701589682528</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1701589682528</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -275,7 +274,8 @@
     <MESSAGE value="first commit" />
     <MESSAGE value="添加了文档，更新了tfidf方法" />
     <MESSAGE value="添加lucene分词" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加lucene分词" />
+    <MESSAGE value="添加索引和搜索功能" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加索引和搜索功能" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
