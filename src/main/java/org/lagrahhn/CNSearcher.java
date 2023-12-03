@@ -1,5 +1,6 @@
 package org.lagrahhn;
 
+import org.apache.lucene.analysis.TokenStream;
 import org.apache.lucene.analysis.cn.smart.SmartChineseAnalyzer;
 import org.apache.lucene.document.Document;
 import org.apache.lucene.index.DirectoryReader;
@@ -9,9 +10,11 @@ import org.apache.lucene.search.IndexSearcher;
 import org.apache.lucene.search.Query;
 import org.apache.lucene.search.ScoreDoc;
 import org.apache.lucene.search.TopDocs;
+import org.apache.lucene.search.highlight.*;
 import org.apache.lucene.store.Directory;
 import org.apache.lucene.store.FSDirectory;
 
+import java.io.StringReader;
 import java.nio.file.Paths;
 
 public class CNSearcher {
@@ -30,13 +33,35 @@ public class CNSearcher {
         System.out.println("匹配" + q + "共耗时" + (endTime - startTime) + "毫秒");
         System.out.println("查询到" + docs.totalHits + "条记录");
 
-        for (ScoreDoc scoreDoc : docs.scoreDocs) { //取出每条查询结果
+        SimpleHTMLFormatter simpleHTMLFormatter = new SimpleHTMLFormatter("<b><font color=red>","</font></b>"); //如果不指定参数的话，默认是加粗，即<b><b/>
+        QueryScorer scorer = new QueryScorer(query);//计算得分，会初始化一个查询结果最高的得分
+        Fragmenter fragmenter = new SimpleSpanFragmenter(scorer); //根据这个得分计算出一个片段
+        Highlighter highlighter = new Highlighter(simpleHTMLFormatter, scorer);
+        highlighter.setTextFragmenter(fragmenter); //设置一下要显示的片段
+
+
+        for(ScoreDoc scoreDoc : docs.scoreDocs) { //取出每条查询结果
             Document doc = searcher.doc(scoreDoc.doc); //scoreDoc.doc相当于docID,根据这个docID来获取文档
             System.out.println(doc.get("city"));
             System.out.println(doc.get("desc"));
             String desc = doc.get("desc");
+
+            //显示高亮
+            if(desc != null) {
+                TokenStream tokenStream = analyzer.tokenStream("desc", new StringReader(desc));
+                String summary = highlighter.getBestFragment(tokenStream, desc);
+                System.out.println(summary);
+            }
         }
         reader.close();
+
+        //for (ScoreDoc scoreDoc : docs.scoreDocs) { //取出每条查询结果
+        //    Document doc = searcher.doc(scoreDoc.doc); //scoreDoc.doc相当于docID,根据这个docID来获取文档
+        //    System.out.println(doc.get("city"));
+        //    System.out.println(doc.get("desc"));
+        //    String desc = doc.get("desc");
+        //}
+        //reader.close();
     }
 
     public static void main(String[] args) {

@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f1dbfe3e-3eae-43d7-b8f5-5b42705e37cd" name="变更" comment="添加索引和搜索功能">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/lagrahhn/CNIndexer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/lagrahhn/CNSearcher.java" afterDir="false" />
+    <list default="true" id="f1dbfe3e-3eae-43d7-b8f5-5b42705e37cd" name="变更" comment="添加中文索引和搜索功能">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/lagrahhn/CNSearcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lagrahhn/CNSearcher.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -194,7 +192,7 @@
       <workItem from="1701417971616" duration="74000" />
       <workItem from="1701439523397" duration="2180000" />
       <workItem from="1701523075229" duration="10000" />
-      <workItem from="1701586731442" duration="3303000" />
+      <workItem from="1701586731442" duration="3650000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1701352457289</created>
@@ -252,7 +250,14 @@
       <option name="project" value="LOCAL" />
       <updated>1701589682528</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="添加中文索引和搜索功能">
+      <created>1701590407010</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1701590407010</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -275,7 +280,8 @@
     <MESSAGE value="添加了文档，更新了tfidf方法" />
     <MESSAGE value="添加lucene分词" />
     <MESSAGE value="添加索引和搜索功能" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加索引和搜索功能" />
+    <MESSAGE value="添加中文索引和搜索功能" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加中文索引和搜索功能" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
