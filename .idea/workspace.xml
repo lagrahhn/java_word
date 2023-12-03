@@ -4,19 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f1dbfe3e-3eae-43d7-b8f5-5b42705e37cd" name="变更" comment="添加了文档，更新了tfidf方法">
-      <change afterPath="$PROJECT_DIR$/doc/image-20231201134855616.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doc/img_5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doc/img_6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doc/img_7.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doc/img_8.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doc/img_9.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/lagrahhn/StdAnalyzer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/lagrahhn/VSM.java" afterDir="false" />
+    <list default="true" id="f1dbfe3e-3eae-43d7-b8f5-5b42705e37cd" name="变更" comment="添加lucene分词">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/lagrahhn/Indexer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/lagrahhn/Searcher.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/data/a.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/data/b.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/data/c.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/index/_0.cfe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/index/_0.cfs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/index/_0.si" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/index/_1.cfe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/index/_1.cfs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/index/_1.si" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/index/segments_2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/index/write.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/chapter1.md" beforeDir="false" afterPath="$PROJECT_DIR$/doc/chapter1.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/lagrahhn/TfIdf.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lagrahhn/TfIdf.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,22 +54,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;F:/项目/Java项目/words/src/main/resources&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
-  <component name="RunManager" selected="应用程序.StdAnalyzer">
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\项目\Java项目\words\src\main\resources" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\项目\Java项目\words\src\main\resources\data" />
+      <recent name="F:\项目\Java项目\words\src\main\resources" />
+    </key>
+  </component>
+  <component name="RunManager" selected="应用程序.Searcher">
     <configuration default="true" type="AZURE_FUNCTION_SUPPORT" factoryName="Run Functions">
       <option name="appName" />
       <option name="appServicePlanName" />
@@ -99,6 +112,45 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="HaNLP" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.lagrahhn.HaNLP" />
+      <module name="lagrahhn" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.lagrahhn.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Indexer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.lagrahhn.Indexer" />
+      <module name="lagrahhn" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.lagrahhn.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Searcher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.lagrahhn.Searcher" />
+      <module name="lagrahhn" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.lagrahhn.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="StdAnalyzer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.lagrahhn.StdAnalyzer" />
       <module name="lagrahhn" />
@@ -127,6 +179,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="应用程序.Searcher" />
+        <item itemvalue="应用程序.Indexer" />
+        <item itemvalue="应用程序.HaNLP" />
         <item itemvalue="应用程序.StdAnalyzer" />
         <item itemvalue="应用程序.VSM" />
       </list>
@@ -143,7 +198,11 @@
       <workItem from="1701352415364" duration="3170000" />
       <workItem from="1701397060948" duration="1874000" />
       <workItem from="1701406707769" duration="207000" />
-      <workItem from="1701409424552" duration="3868000" />
+      <workItem from="1701409424552" duration="4112000" />
+      <workItem from="1701417971616" duration="74000" />
+      <workItem from="1701439523397" duration="2180000" />
+      <workItem from="1701523075229" duration="10000" />
+      <workItem from="1701586731442" duration="2596000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1701352457289</created>
@@ -187,7 +246,14 @@
       <option name="project" value="LOCAL" />
       <updated>1701397278720</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="添加lucene分词">
+      <created>1701413447707</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1701413447707</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -208,7 +274,8 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="first commit" />
     <MESSAGE value="添加了文档，更新了tfidf方法" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加了文档，更新了tfidf方法" />
+    <MESSAGE value="添加lucene分词" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加lucene分词" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
